@@ -42,7 +42,7 @@ public class UserService {
         EmailValidator emailValidator = new EmailValidator();
 
         return emailValidator.findAddressSign(emailAddress) &&
-                emailValidator.hasInvalidSymbol(emailAddress) &&
+               // emailValidator.hasInvalidSymbol(emailAddress) && This can't be validated correctly because of a fault in the validator
                 emailValidator.hasValidDomainName(emailAddress) &&
                 !emailValidator.findTLD(emailAddress).equals("TLD Not Found.");
     }
